@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\UsuarioController;
+use App\Http\Controllers\AutenticarController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResources([
     'usuarios' => UsuarioController::class,
 ]);
+
+Route::post('registro', [AutenticarController::class, 'registro']);
+
+Route::post('login', [AutenticarController::class, 'accederCuenta']);
+
+Route::post('logout', [AutenticarController::class, 'cerrarSesion']);
