@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->dateTime('fecha');
             $table->text('comentario');
-            $table->foreignUuid('articulo_comentado')->constrained('articulos')->OnDelete('cascade');
+            $table->foreignId('articulo_comentado')->constrained('articulos')->OnDelete('cascade');
             $table->foreignId('hace_comentario')->constrained('usuarios')->OnDelete('cascade');
             $table->foreignId('respuesta_de')->constrained('comentarios');
             $table->timestamps();

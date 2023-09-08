@@ -30,3 +30,5 @@ Route::apiResources([
 ]);
 
 Route::post('articulos', [ArticuloController::class, 'store']);
+Route::get('articulos/{articulo}', [ArticuloController::class, 'show']);
+Route::put('articulos/{articulo}', [ArticuloController::class, 'update']);

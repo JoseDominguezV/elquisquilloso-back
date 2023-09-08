@@ -83,7 +83,6 @@ class articuloSeeder extends Seeder
 
         foreach (range(1, 5) as $index) {
             DB::table('articulos')->insert([
-                'id' => $faker->uuid,
                 'titulo' => $titulos[$index -1],
                 'subtitulo' => $subtitulos[$index -1],
                 'contenido' => $contenidos[$index -1],

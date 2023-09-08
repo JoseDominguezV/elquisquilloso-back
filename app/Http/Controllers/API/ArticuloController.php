@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ActualizarArticuloRequest;
 use App\Http\Requests\GuardarArticuloRequest;
 use App\Models\Articulo;
 use Illuminate\Http\Request;
@@ -25,24 +26,31 @@ class ArticuloController extends Controller
         Articulo::create($request->all());
         return response()->json([
             'res' => true,
-            'msg' => 'Paciente Guardado Correctamente'
-        ]);
+            'msg' => 'Articulo agregado correctamente'
+        ],200);
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Articulo $articulo)
     {
-        //
+        return response()->json([
+            'res' => true,
+            'articulo' => $articulo
+        ],200);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(ActualizarArticuloRequest $request, Articulo $articulo)
     {
-        //
+        $articulo -> update($request->all());
+        return response()->json([
+            'res' => true,
+            'mensaje' => 'Articulo Actualizado Correctamente'
+        ],200);
     }
 
     /**
