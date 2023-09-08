@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('articulos', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('titulo');
+            $table->string('subtitulo');
             $table->longText('contenido');
             $table-> dateTime('fecha_publicacion');
             $table->tinyInteger('estado_revision')->default(2);

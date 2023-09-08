@@ -1,6 +1,8 @@
 <?php
 
+
 use App\Http\Controllers\API\UsuarioController;
+use App\Http\Controllers\API\ArticuloController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +24,9 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::apiResources([
     'usuarios' => UsuarioController::class,
 ]);
+
+Route::apiResources([
+    'articulos' => ArticuloController::class,
+]);
+
+Route::post('articulos', [ArticuloController::class, 'store']);
