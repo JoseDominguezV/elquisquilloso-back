@@ -23,6 +23,14 @@ class articuloSeeder extends Seeder
             'La Importancia de la Sostenibilidad Ambiental'
         ];
 
+        $subtitulos = [
+            'Subtitulo 1',
+            'Subtitulo 2',
+            'Subtitulo 3',
+            'Subtitulo 4',
+            'Subtitulo 5'
+        ];
+
         $contenidos = [
             'La educación es un pilar fundamental en la sociedad moderna. No solo es un vehículo para adquirir conocimientos y habilidades, sino que también desempeña un papel crucial en la formación de ciudadanos informados y responsables. En este artículo, exploraremos la importancia de la educación en la sociedad actual y cómo influye en el desarrollo individual y colectivo.
 
@@ -75,9 +83,10 @@ class articuloSeeder extends Seeder
 
         foreach (range(1, 5) as $index) {
             DB::table('articulos')->insert([
-                'id' => $faker->uuid,
                 'titulo' => $titulos[$index -1],
+                'subtitulo' => $subtitulos[$index -1],
                 'contenido' => $contenidos[$index -1],
+                'imagen_portada' => 'D:\Jose\Trabajos\Fotos\Captura de pantalla 2023-08-05 191026.png',
                 'fecha_publicacion' => $faker->dateTimeBetween('-1 year', 'now'),
                 'estado_revision' => $faker->randomElement([0, 1, 2]),
                 'autor_id' => $faker->numberBetween(1, 6), // Ajusta este rango según tus usuarios reales

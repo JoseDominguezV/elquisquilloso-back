@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(articuloSeeder::class); 
         $this->call(categoriaSeeder::class); 
         $this->call(eventoSeeder::class); 
+        $this->call(imagenSeeder::class); 
     }
 }
