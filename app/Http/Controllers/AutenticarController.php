@@ -25,15 +25,18 @@ class AutenticarController extends Controller
         $usuario = Usuario::where('correo_electronico', $request->input('correo_electronico'))->first();
 
         if(!$usuario || !Hash::check($request->password, $usuario->password)) {
-            throw ValidationException::withMessages([
-                'msg' => ['Las credenciales son incorrectas.'],
-            ]);
+            $response = [
+                'status' => 'failed',
+                'error' => 'Las credenciales son incorrectas.'
+            ];
+            return response()->json($response);
         }
 
         $token = $usuario->createToken($request->input('correo_electronico'))->plainTextToken;
 
         return response()->json([
             'status' => 'success',
+            'id' => $usuario->id,
             'token' => $token,
         ]); 
     }
