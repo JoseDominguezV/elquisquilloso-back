@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('subtitulo');
+            $table->string('imagen_portada')->nullable();
             $table->longText('contenido');
             $table-> dateTime('fecha_publicacion')->default(now());
             $table->tinyInteger('estado_revision')->default(2);

@@ -1,8 +1,8 @@
 <?php
 
-
 use App\Http\Controllers\API\UsuarioController;
 use App\Http\Controllers\API\ArticuloController;
+use App\Http\Controllers\API\ImagenController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,3 +32,6 @@ Route::apiResources([
 Route::post('articulos', [ArticuloController::class, 'store']);
 Route::get('articulos/{articulo}', [ArticuloController::class, 'show']);
 Route::put('articulos/{articulo}', [ArticuloController::class, 'update']);
+Route::delete('articulos/{articulo}', [ArticuloController::class, 'destroy']);
+
+Route::get('imagenes',[ImagenController::class, 'index']);

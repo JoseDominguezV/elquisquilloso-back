@@ -24,6 +24,7 @@ class GuardarArticuloRequest extends FormRequest
         return [
             "titulo" => "required|max:500",
             "subtitulo" => "required|max:500",
+            "imagen_portada" => "required",
             "contenido" => "required",
             "estado_revision" => "required",
             "autor_id" => "required"

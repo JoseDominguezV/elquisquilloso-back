@@ -25,6 +25,7 @@ class ActualizarArticuloRequest extends FormRequest
             "titulo" => "required|max:500",
             "subtitulo" => "required|max:500",
             "contenido" => "required",
+            "imagen_portada" => "required",
             "estado_revision" => "required",
             "autor_id" => "required"
         ];

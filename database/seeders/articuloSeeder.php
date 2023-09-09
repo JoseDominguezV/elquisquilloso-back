@@ -86,6 +86,7 @@ class articuloSeeder extends Seeder
                 'titulo' => $titulos[$index -1],
                 'subtitulo' => $subtitulos[$index -1],
                 'contenido' => $contenidos[$index -1],
+                'imagen_portada' => 'D:\Jose\Trabajos\Fotos\Captura de pantalla 2023-08-05 191026.png',
                 'fecha_publicacion' => $faker->dateTimeBetween('-1 year', 'now'),
                 'estado_revision' => $faker->randomElement([0, 1, 2]),
                 'autor_id' => $faker->numberBetween(1, 6), // Ajusta este rango según tus usuarios reales
